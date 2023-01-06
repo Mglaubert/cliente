@@ -8,33 +8,29 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import java.io.Serializable;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Entity
+public class Cliente implements Serializable{
+    
+        @Id
+        @GeneratedValue(strategy = GenerationType.AUTO)
+        private Long id;
 
-public class cliente implements Serializable{
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+        @Column(name = "nome", nullable = false)
+        rivate String nome;
 
-    @Column(name = "nome", nullable = false)
-    private String nome;
+        @Column(name="data_nasc")
+        private String data_nasc;
 
-    @Column(name="data_nasc")
-    private String data_nasc;
+        @Column(name = "logradouro")
+        private String logradouro;
 
-    @Column(name = "logradouro")
-    private String logradouro;
+        @Column(name = "cep")
+        private String cep;
 
-    @Column(name = "cep")
-    private String cep;
-
-    @Column(name = "numero")
-    private String numero;
+        @Column(name = "numero")
+        private String numero;
 }
