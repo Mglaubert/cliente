@@ -10,12 +10,12 @@ import java.util.Optional;
 
 @Service
 public class ClienteService {
-    
+
     @Autowired
     private ClienteRepository clienteRepository;
 
     public Cliente salvar(Cliente cliente){
-        return ClienteRepository.save(cliente);
+        return clienteRepository.save(cliente);
     }
 
     public List<Cliente> listaCliente(){
